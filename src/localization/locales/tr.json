@@ -20,6 +20,9 @@
       "pray": "Dualar",
       "mosque": "Cami Bul",
       "quiz": "Bil Bakalım"
+    },
+    "sections": {
+      "quickAccess": "Hızlı Erişim"
     }
   }
 }

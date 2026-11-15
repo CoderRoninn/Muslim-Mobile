@@ -20,6 +20,9 @@
       "pray": "Prayers",
       "mosque": "Find Mosque",
       "quiz": "Quiz"
+    },
+    "sections": {
+      "quickAccess": "Quick Access"
     }
   }
 }
