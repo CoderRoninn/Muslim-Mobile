@@ -45,6 +45,14 @@ const Home = () => {
           ))}
         </ScrollView>
       </View>
+
+      {/* Daily worship streak section: title and card */}
+      <View style={styles.section}>
+        {/* Section title */}
+        <Text style={styles.sectionTitle}>
+          {t('home.sections.dailyStreak')}
+        </Text>
+      </View>
     </View>
   );
 };
