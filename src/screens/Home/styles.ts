@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { COLORS, SPACING } from '../../const/theme';
+import { COLORS, SPACING, TYPOGRAPHY } from '../../const/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -7,6 +7,14 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
     paddingHorizontal: SPACING.extraLarge,
     gap: SPACING.huge,
+  },
+  // Keeps the title and the content at the same distance
+  section: {
+    gap: SPACING.medium,
+  },
+  sectionTitle: {
+    ...TYPOGRAPHY.title,
+    color: COLORS.text,
   },
   // Cancels the screen side padding so cards can scroll to the edges
   quickAccessList: {
