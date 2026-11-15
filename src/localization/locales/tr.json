@@ -22,7 +22,8 @@
       "quiz": "Bil Bakalım"
     },
     "sections": {
-      "quickAccess": "Hızlı Erişim"
+      "quickAccess": "Hızlı Erişim",
+      "dailyStreak": "Günlük İbadet Serisi"
     }
   }
 }

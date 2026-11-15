@@ -22,7 +22,8 @@
       "quiz": "Quiz"
     },
     "sections": {
-      "quickAccess": "Quick Access"
+      "quickAccess": "Quick Access",
+      "dailyStreak": "Daily Worship Streak"
     }
   }
 }
