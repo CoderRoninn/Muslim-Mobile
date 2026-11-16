@@ -1,0 +1,44 @@
+{
+  "home": {
+    "header": {
+      "title": "With Greetings And Prayers",
+      "subtitle": "Tuesday, November 3"
+    },
+    "prayerCard": {
+      "now": "Now",
+      "prayerName": "Isha",
+      "district": "Bağlar,",
+      "country": "Turkey",
+      "remaining": "7h 31m until Fajr time",
+      "viewAll": "View all prayer times"
+    },
+    "quickAccess": {
+      "quran": "Quran",
+      "prayer": "Prayer",
+      "tasbih": "Dhikr",
+      "qibla": "Qibla",
+      "pray": "Prayers",
+      "mosque": "Find Mosque",
+      "quiz": "Quiz"
+    },
+    "streakCard": {
+      "goalsTitle": "Today's Goals",
+      "goals": {
+        "prayer": "I prayed",
+        "quran": "I read the Quran",
+        "dhikr": "I did dhikr",
+        "dua": "I made dua"
+      },
+      "viewStreak": "View Your Streak"
+    },
+    "duaCard": {
+      "source": "Al-Baqarah, 2:201",
+      "meaning": "Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire."
+    },
+    "sections": {
+      "quickAccess": "Quick Access",
+      "dailyStreak": "Daily Worship Streak",
+      "dailyVerse": "Verse of the Day"
+    }
+  }
+}

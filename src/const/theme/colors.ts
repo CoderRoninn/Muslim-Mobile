@@ -1,0 +1,13 @@
+// App colors
+export const COLORS = {
+  background: '#032A2A',
+  text: '#F4F1EA',
+  textMuted: '#A8BDB8',
+  gold: '#F2B544',
+  translucentBackground: 'rgba(255, 255, 255, 0.05)',
+  translucentBorder: 'rgba(255, 255, 255, 0.10)',
+  checkboxBorder: 'rgba(255, 255, 255, 0.30)',
+  goldTranslucentBackground: 'rgba(242, 181, 68, 0.14)',
+  goldTranslucentBorder: 'rgba(242, 181, 68, 0.35)',
+  notificationBadge: '#E5484D',
+} as const;

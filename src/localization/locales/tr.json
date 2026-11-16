@@ -1,0 +1,44 @@
+{
+  "home": {
+    "header": {
+      "title": "Selam Ve Dua İle",
+      "subtitle": "Salı, 3 Kasım"
+    },
+    "prayerCard": {
+      "now": "Şimdi",
+      "prayerName": "Yatsı",
+      "district": "Bağlar,",
+      "country": "Türkiye",
+      "remaining": "İmsak vaktine 7 sa 31 dk kaldı",
+      "viewAll": "Tüm namaz vakitlerini görüntüle"
+    },
+    "quickAccess": {
+      "quran": "Kur'an",
+      "prayer": "Namaz",
+      "tasbih": "Zikir",
+      "qibla": "Kıble",
+      "pray": "Dualar",
+      "mosque": "Cami Bul",
+      "quiz": "Bil Bakalım"
+    },
+    "streakCard": {
+      "goalsTitle": "Bugünkü Hedefler",
+      "goals": {
+        "prayer": "Namazımı kıldım",
+        "quran": "Kur'an okudum",
+        "dhikr": "Zikir çektim",
+        "dua": "Dua ettim"
+      },
+      "viewStreak": "Serini Gör"
+    },
+    "duaCard": {
+      "source": "Bakara, 2:201",
+      "meaning": "Rabbimiz! Bize dünyada da iyilik ver, ahirette de iyilik ver ve bizi cehennem azabından koru."
+    },
+    "sections": {
+      "quickAccess": "Hızlı Erişim",
+      "dailyStreak": "Günlük İbadet Serisi",
+      "dailyVerse": "Günün Ayeti"
+    }
+  }
+}
