@@ -1,8 +1,8 @@
 // App colors
 export const COLORS = {
-  background: '#0C121B',
+  background: '#032A2A',
   text: '#F4F1EA',
-  textMuted: '#AEB8C8',
+  textMuted: '#A8BDB8',
   gold: '#F2B544',
   translucentBackground: 'rgba(255, 255, 255, 0.05)',
   translucentBorder: 'rgba(255, 255, 255, 0.10)',
