@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import DuaCard from '../../components/Home/DuaCard';
 import Header from '../../components/Home/Header';
 import PrayerCard from '../../components/Home/PrayerCard';
 import QuickAccessCard from '../../components/Home/QuickAccessCard';
 import StreakCard from '../../components/Home/StreakCard';
+import VerseCard from '../../components/Home/VerseCard';
 import { SPACING } from '../../const/theme';
 import { QUICK_ACCESS_ITEMS } from '../../data/quickAccess';
 import styles from './styles';
@@ -74,7 +74,7 @@ const Home = () => {
         <Text style={styles.sectionTitle}>{t('home.sections.dailyVerse')}</Text>
 
         {/* Daily verse card */}
-        <DuaCard />
+        <VerseCard />
       </View>
     </ScrollView>
   );
