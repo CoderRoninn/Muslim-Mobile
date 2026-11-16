@@ -5,6 +5,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
+  },
+  // Side padding and the distance between the sections
+  content: {
     paddingHorizontal: SPACING.extraLarge,
     gap: SPACING.huge,
   },
