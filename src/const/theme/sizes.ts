@@ -19,6 +19,7 @@ export const SIZES = {
     height: scale(80),
   },
   radius: {
+    extraSmall: scale(6),
     small: scale(8),
     large: scale(20),
   },
