@@ -21,9 +21,24 @@
       "mosque": "Cami Bul",
       "quiz": "Bil Bakalım"
     },
+    "streakCard": {
+      "goalsTitle": "Bugünkü Hedefler",
+      "goals": {
+        "prayer": "Namazımı kıldım",
+        "quran": "Kur'an okudum",
+        "dhikr": "Zikir çektim",
+        "dua": "Dua ettim"
+      },
+      "viewStreak": "Serini Gör"
+    },
+    "duaCard": {
+      "source": "Bakara, 2:201",
+      "meaning": "Rabbimiz! Bize dünyada da iyilik ver, ahirette de iyilik ver ve bizi cehennem azabından koru."
+    },
     "sections": {
       "quickAccess": "Hızlı Erişim",
-      "dailyStreak": "Günlük İbadet Serisi"
+      "dailyStreak": "Günlük İbadet Serisi",
+      "dailyVerse": "Günün Ayeti"
     }
   }
 }
