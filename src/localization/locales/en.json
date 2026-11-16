@@ -40,5 +40,12 @@
       "dailyStreak": "Daily Worship Streak",
       "dailyVerse": "Verse of the Day"
     }
+  },
+  "tabs": {
+    "home": "Home",
+    "prayer": "Prayers",
+    "quran": "Quran",
+    "discover": "Discover",
+    "profile": "Profile"
   }
 }

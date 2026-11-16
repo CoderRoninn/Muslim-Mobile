@@ -40,5 +40,12 @@
       "dailyStreak": "Günlük İbadet Serisi",
       "dailyVerse": "Günün Ayeti"
     }
+  },
+  "tabs": {
+    "home": "Ana Sayfa",
+    "prayer": "Namazlar",
+    "quran": "Kur'an",
+    "discover": "Keşfet",
+    "profile": "Profil"
   }
 }
