@@ -8,7 +8,7 @@ import styles from './styles';
 const VERSE_ARABIC =
   'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ';
 
-const DuaCard = () => {
+const VerseCard = () => {
   // t gets the text for the current language by its key
   const { t } = useTranslation();
 
@@ -37,4 +37,4 @@ const DuaCard = () => {
   );
 };
 
-export default DuaCard;
+export default VerseCard;
