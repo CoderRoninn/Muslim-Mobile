@@ -23,6 +23,11 @@ export const TYPOGRAPHY = {
     lineHeight: moderateScale(16),
     fontWeight: '600',
   },
+  verse: {
+    fontSize: moderateScale(24),
+    lineHeight: moderateScale(40),
+    fontWeight: '400',
+  },
   badge: {
     fontSize: moderateScale(8),
     lineHeight: moderateScale(10),
