@@ -1,4 +1,3 @@
-// Quick access items: translation key and image of each card
 export const QUICK_ACCESS_ITEMS = [
   {
     id: 'qibla',

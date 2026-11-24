@@ -1,6 +1,5 @@
 import { scale } from '../../utils/responsive';
 
-// App element sizes
 export const SIZES = {
   icon: {
     extraSmall: scale(16),

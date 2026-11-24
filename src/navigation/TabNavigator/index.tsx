@@ -12,11 +12,9 @@ import Profile from '../../screens/Profile';
 import Quran from '../../screens/Quran';
 import { TabParamList } from '../types';
 
-// Tab navigator that knows the screen names from TabParamList
 const Tab = createBottomTabNavigator<TabParamList>();
 
 const TabNavigator = () => {
-  // t gets the text for the current language by its key
   const { t } = useTranslation();
 
   return (
@@ -41,7 +39,6 @@ const TabNavigator = () => {
         ),
       }}
     >
-      {/* Home tab */}
       <Tab.Screen
         name={SCREENS.HOME}
         component={Home}
@@ -52,7 +49,6 @@ const TabNavigator = () => {
           ),
         }}
       />
-      {/* Prayer tab */}
       <Tab.Screen
         name={SCREENS.PRAYER}
         component={Prayer}
@@ -67,7 +63,6 @@ const TabNavigator = () => {
           ),
         }}
       />
-      {/* Quran tab */}
       <Tab.Screen
         name={SCREENS.QURAN}
         component={Quran}
@@ -82,7 +77,6 @@ const TabNavigator = () => {
           ),
         }}
       />
-      {/* Discover tab */}
       <Tab.Screen
         name={SCREENS.DISCOVER}
         component={Discover}
@@ -97,7 +91,6 @@ const TabNavigator = () => {
           ),
         }}
       />
-      {/* Profile tab */}
       <Tab.Screen
         name={SCREENS.PROFILE}
         component={Profile}

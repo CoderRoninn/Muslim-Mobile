@@ -11,21 +11,17 @@ import { QUICK_ACCESS_ITEMS } from '../../data/quickAccess';
 import styles from './styles';
 
 const Home = () => {
-  // Gets the safe area size of the device
   const insets = useSafeAreaInsets();
 
-  // t gets the text for the current language by its key
   const { t } = useTranslation();
 
   return (
-    // Whole screen scrolls vertically
     <ScrollView
       style={styles.container}
       contentContainerStyle={[
         styles.content,
         {
           paddingTop: insets.top + SPACING.large,
-          // The tab bar already handles the bottom safe area
           paddingBottom: SPACING.large,
         },
       ]}
@@ -33,21 +29,17 @@ const Home = () => {
     >
       <Header />
       <PrayerCard />
-      {/* Quick access section: title and list */}
       <View style={styles.section}>
-        {/* Section title */}
         <Text style={styles.sectionTitle}>
           {t('home.sections.quickAccess')}
         </Text>
 
-        {/* Horizontal quick access list, extends to the screen edges */}
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
           style={styles.quickAccessList}
           contentContainerStyle={styles.quickAccessContent}
         >
-          {/* Cards are created from the data file */}
           {QUICK_ACCESS_ITEMS.map((item) => (
             <QuickAccessCard
               key={item.id}
@@ -58,23 +50,17 @@ const Home = () => {
         </ScrollView>
       </View>
 
-      {/* Daily worship streak section: title and card */}
       <View style={styles.section}>
-        {/* Section title */}
         <Text style={styles.sectionTitle}>
           {t('home.sections.dailyStreak')}
         </Text>
 
-        {/* Daily worship streak card */}
         <StreakCard />
       </View>
 
-      {/* Daily verse section: title and card */}
       <View style={styles.section}>
-        {/* Section title */}
         <Text style={styles.sectionTitle}>{t('home.sections.dailyVerse')}</Text>
 
-        {/* Daily verse card */}
         <VerseCard />
       </View>
     </ScrollView>

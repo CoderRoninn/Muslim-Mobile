@@ -1,6 +1,5 @@
 import { moderateScale } from '../../utils/responsive';
 
-// App text styles
 export const TYPOGRAPHY = {
   title: {
     fontSize: moderateScale(16),

@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native';
 import { COLORS, SIZES, SPACING, TYPOGRAPHY } from '../../../const/theme';
 import { scale } from '../../../utils/responsive';
 
-// Size used only in this card
 const CHECKBOX_SIZE = scale(20);
 
 const styles = StyleSheet.create({

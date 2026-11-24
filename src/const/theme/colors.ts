@@ -1,4 +1,3 @@
-// App colors
 export const COLORS = {
   background: '#032A2A',
   tabBarBackground: '#0F3535',
