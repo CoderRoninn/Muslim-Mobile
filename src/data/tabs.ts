@@ -1,5 +1,6 @@
 import { SCREENS } from '../const/screens';
 
+// Bottom bar tabs with the screen name and the translation key of each tab
 export const TABS = [
   { id: SCREENS.HOME, titleKey: 'tabs.home' },
   { id: SCREENS.PRAYER, titleKey: 'tabs.prayer' },
