@@ -1,4 +1,4 @@
-// Quick access items: translation key and image of each card
+// Quick access cards on the Home screen with their translation key and image
 export const QUICK_ACCESS_ITEMS = [
   {
     id: 'qibla',

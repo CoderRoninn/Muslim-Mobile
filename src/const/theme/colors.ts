@@ -1,6 +1,7 @@
-// App colors
+// Color palette of the app
 export const COLORS = {
   background: '#032A2A',
+  tabBarBackground: '#0F3535',
   text: '#F4F1EA',
   textMuted: '#A8BDB8',
   gold: '#F2B544',

@@ -1,4 +1,4 @@
-// Screen names used across the app (navigator and navigation calls)
+// Screen names used by the navigator
 export const SCREENS = {
   HOME: 'Home',
   QURAN: 'Quran',

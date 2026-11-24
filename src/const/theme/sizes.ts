@@ -1,6 +1,6 @@
 import { scale } from '../../utils/responsive';
 
-// App element sizes
+// Component sizes scaled to the screen width
 export const SIZES = {
   icon: {
     extraSmall: scale(16),
@@ -22,5 +22,9 @@ export const SIZES = {
     extraSmall: scale(6),
     small: scale(8),
     large: scale(20),
+  },
+  tabBar: {
+    // Tab bar height without the safe area
+    height: 54,
   },
 } as const;

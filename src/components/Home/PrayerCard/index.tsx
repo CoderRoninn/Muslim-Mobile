@@ -5,47 +5,42 @@ import { Text, View } from 'react-native';
 import { COLORS, SIZES } from '../../../const/theme';
 import styles from './styles';
 
-// Dummy prayer time, will come from real data later
+// Dummy prayer time until the real data comes from the backend
 const PRAYER_TIME = '19:29';
 
 const PrayerCard = () => {
-  // t gets the text for the current language by its key
   const { t } = useTranslation();
 
   return (
-    // Card container
     <View style={styles.container}>
-      {/* Top row */}
+      {/* Top row with the prayer info and the location */}
       <View style={styles.topRow}>
-        {/* Now badge and prayer name */}
+        {/* Current prayer badge name and icon */}
         <View style={styles.leftGroup}>
-          {/* Now badge */}
+          {/* Badge that shows the prayer time has started */}
           <View style={styles.nowBadge}>
-            {/* Gold dot */}
+            {/* Small dot inside the badge */}
             <View style={styles.nowDot} />
-            {/* Now text */}
+            {/* Badge text */}
             <Text style={styles.nowText}>{t('home.prayerCard.now')}</Text>
           </View>
-          {/* Prayer name */}
+          {/* Name of the current prayer */}
           <Text style={styles.prayerName}>{t('home.prayerCard.prayerName')}</Text>
           {/* Moon icon */}
           <AntDesign name="moon" size={SIZES.icon.small} color={COLORS.gold} />
         </View>
-        {/* District and country */}
+        {/* District and country of the user */}
         <View style={styles.rightGroup}>
-          {/* District */}
           <Text style={styles.location}>{t('home.prayerCard.district')}</Text>
-          {/* Country */}
           <Text style={styles.location}>{t('home.prayerCard.country')}</Text>
         </View>
       </View>
-      {/* Prayer time */}
+      {/* Time of the current prayer */}
       <Text style={styles.time}>{PRAYER_TIME}</Text>
-      {/* Time left until the next prayer */}
+      {/* Remaining time until the next prayer */}
       <Text style={styles.remaining}>{t('home.prayerCard.remaining')}</Text>
-      {/* Footer row with top divider */}
+      {/* Footer with a link to all prayer times */}
       <View style={styles.footer}>
-        {/* View all prayer times text */}
         <Text style={styles.footerText}>{t('home.prayerCard.viewAll')}</Text>
         {/* Arrow icon */}
         <FontAwesome6 name="arrow-right" size={SIZES.icon.extraSmall} color={COLORS.gold} />

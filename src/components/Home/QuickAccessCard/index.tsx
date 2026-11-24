@@ -4,12 +4,11 @@ import styles from './styles';
 
 const QuickAccessCard = ({ image, title }: QuickAccessCardProps) => {
   return (
-    // Card container
     <View style={styles.container}>
-      {/* Card image */}
+      {/* Image of the quick access item */}
       <Image source={image} style={styles.image} resizeMode="contain" />
 
-      {/* Card title */}
+      {/* Title of the quick access item */}
       <Text style={styles.title}>{title}</Text>
     </View>
   );

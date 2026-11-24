@@ -6,10 +6,10 @@ import { Animated, Text, View } from 'react-native';
 import { ANIMATION, SIZES } from '../../../const/theme';
 import styles from './styles';
 
-// Dummy user name, will come from the user data later
+// Dummy user name until the real data comes from the backend
 const USER_NAME = 'Doğukan Süme';
 
-// Fades the opacity value to the target, then calls onEnd if it finished
+// Fades the opacity to the given value and runs the callback when the animation ends
 const fadeTo = (
   opacity: Animated.Value,
   toValue: number,
@@ -25,26 +25,24 @@ const fadeTo = (
 };
 
 const Header = () => {
-  // t gets the text for the current language by its key
   const { t } = useTranslation();
 
-  // Decides which text the subtitle shows: the user name or the date
+  // Decides whether the user name or the subtitle text is visible
   const [showName, setShowName] = useState(true);
 
-  // Subtitle opacity: 1 is visible, 0 is hidden
+  // Opacity value used by the fade animation
   const opacity = useRef(new Animated.Value(1)).current;
 
-  // Switches the subtitle text with a fade animation, over and over
+  // Fades the text out then switches it and fades it back in on a timer
   useEffect(() => {
     const interval = setInterval(() => {
-      // The old text fades out, then the text changes and the new one fades in
       fadeTo(opacity, 0, () => {
         setShowName((previous) => !previous);
         fadeTo(opacity, 1);
       });
     }, ANIMATION.subtitleHold + ANIMATION.fadeDuration * 2);
 
-    // Stops the timer and animation on unmount
+    // Stops the timer and the animation when the component is removed
     return () => {
       clearInterval(interval);
       opacity.stopAnimation();
@@ -52,26 +50,26 @@ const Header = () => {
   }, [opacity]);
 
   return (
-    // Header row
+    // Avatar then texts then notification button in one row
     <View style={styles.container}>
       {/* Avatar circle */}
       <View style={styles.avatarContainer}>
-        {/* User icon */}
+        {/* User icon used as a placeholder avatar */}
         <FontAwesome6 
           name="user" 
           size={SIZES.icon.medium} 
           color="black" />
       </View>
-      {/* Texts next to the avatar */}
+      {/* Title and the changing subtitle */}
       <View style={styles.textContainer}>
-        {/* Title */}
+        {/* Title text */}
         <Text style={styles.title}>{t('home.header.title')}</Text>
-        {/* Subtitle */}
+        {/* Subtitle that fades between the user name and the subtitle text */}
         <Animated.Text style={[styles.subtitle, { opacity }]}>
           {showName ? USER_NAME : t('home.header.subtitle')}
         </Animated.Text>
       </View>
-      {/* Notification button */}
+      {/* Notification button with the unread count */}
       <View style={styles.notificationButton}>
         {/* Bell icon */}
         <MaterialCommunityIcons
@@ -79,8 +77,9 @@ const Header = () => {
           size={SIZES.icon.medium}
           color="white"
         />
-        {/* Notification count badge */}
+        {/* Badge with the unread count */}
         <View style={styles.badge}>
+          {/* Dummy unread count until the real data comes from the backend */}
           <Text style={styles.badgeText} allowFontScaling={false}>
             2
           </Text>

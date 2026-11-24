@@ -4,22 +4,19 @@ import { Text, View } from 'react-native';
 import { COLORS, SIZES } from '../../../const/theme';
 import styles from './styles';
 
-// Dummy verse in Arabic, will come from real data later
+// Dummy Arabic verse text until the real data comes from the backend
 const VERSE_ARABIC =
   'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ';
 
 const VerseCard = () => {
-  // t gets the text for the current language by its key
   const { t } = useTranslation();
 
   return (
-    // Card container
     <View style={styles.container}>
-      {/* Top row */}
+      {/* Top row with the source badge and the share icon */}
       <View style={styles.topRow}>
-        {/* Source badge */}
+        {/* Source of the verse */}
         <View style={styles.sourceBadge}>
-          {/* Source text */}
           <Text style={styles.sourceText}>{t('home.duaCard.source')}</Text>
         </View>
         {/* Share icon */}
@@ -29,9 +26,9 @@ const VerseCard = () => {
           color={COLORS.text}
         />
       </View>
-      {/* Verse in Arabic */}
+      {/* Arabic verse text */}
       <Text style={styles.arabic}>{VERSE_ARABIC}</Text>
-      {/* Verse meaning with top divider */}
+      {/* Meaning of the verse */}
       <Text style={styles.meaning}>{t('home.duaCard.meaning')}</Text>
     </View>
   );

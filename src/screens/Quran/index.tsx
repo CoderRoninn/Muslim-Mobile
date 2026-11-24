@@ -1,0 +1,15 @@
+import { useTranslation } from 'react-i18next';
+import { Text, View } from 'react-native';
+import styles from './styles';
+
+const Quran = () => {
+  const { t } = useTranslation();
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>{t('tabs.quran')}</Text>
+    </View>
+  );
+};
+
+export default Quran;
