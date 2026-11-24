@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
   arabic: {
     ...TYPOGRAPHY.verse,
     textAlign: 'center',
+    // Arabic text is written from right to left
     writingDirection: 'rtl',
     color: COLORS.text,
   },
