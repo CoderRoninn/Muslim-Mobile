@@ -47,5 +47,13 @@
     "quran": "Quran",
     "discover": "Discover",
     "profile": "Profile"
+  },
+  "login": {
+    "welcome": "Welcome",
+    "or": "or",
+    "continue": "Continue",
+    "phone": "Your Phone Number",
+    "google": "Continue with Google",
+    "subtitle": "Sign in to get started"
   }
 }

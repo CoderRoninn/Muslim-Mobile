@@ -47,5 +47,13 @@
     "quran": "Kur'an",
     "discover": "Keşfet",
     "profile": "Profil"
+  },
+  "login": {
+    "welcome": "Hoş Geldin",
+    "or": "ya da",
+    "continue": "Devam Et",
+    "phone": "Telefon Numaranız",
+    "google": "Google ile devam et",
+    "subtitle": "Başlamak için giriş yap"
   }
 }
