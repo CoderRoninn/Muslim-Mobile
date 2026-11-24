@@ -23,4 +23,8 @@ export const SIZES = {
     small: scale(8),
     large: scale(20),
   },
+  tabBar: {
+    // Tab bar height without the safe area
+    height: 54,
+  },
 } as const;
