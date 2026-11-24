@@ -3,6 +3,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
 import { Pressable } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SCREENS } from '../../const/screens';
 import { COLORS, SIZES, SPACING, TYPOGRAPHY } from '../../const/theme';
 import Discover from '../../screens/Discover';
@@ -18,6 +19,9 @@ const Tab = createBottomTabNavigator<TabParamList>();
 const TabNavigator = () => {
   const { t } = useTranslation();
 
+  // Gets the safe area size of the device
+  const insets = useSafeAreaInsets();
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -28,19 +32,27 @@ const TabNavigator = () => {
         // Gold for the open tab and muted for the others
         tabBarActiveTintColor: COLORS.gold,
         tabBarInactiveTintColor: COLORS.textMuted,
-        // Bar colors side spacing and rounded top corners
+        // Bar colors height side spacing and rounded top corners
         tabBarStyle: {
+          // Bar height plus the bottom safe area so the content stays above it
+          height: SIZES.tabBar.height + insets.bottom,
           backgroundColor: COLORS.tabBarBackground,
           borderTopColor: COLORS.translucentBorder,
-          paddingHorizontal: SPACING.extraSmall,
+          paddingHorizontal: SPACING.small,
           borderTopLeftRadius: SIZES.radius.large,
           borderTopRightRadius: SIZES.radius.large,
         },
         // Text style of the tab names
         tabBarLabelStyle: TYPOGRAPHY.label,
+        // Space between the tab icon and the tab name
+        tabBarIconStyle: { marginBottom: SPACING.extraSmall },
         // Plain Pressable removes the Android ripple effect of the default tab button
         tabBarButton: (props) => (
-          <Pressable onPress={props.onPress} style={props.style}>
+          // Small top padding so the content starts a little lower than the bar edge
+          <Pressable
+            onPress={props.onPress}
+            style={[props.style, { paddingTop: SPACING.extraSmall }]}
+          >
             {props.children}
           </Pressable>
         ),
