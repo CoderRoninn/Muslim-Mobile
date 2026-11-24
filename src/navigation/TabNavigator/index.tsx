@@ -12,6 +12,7 @@ import Profile from '../../screens/Profile';
 import Quran from '../../screens/Quran';
 import { TabParamList } from '../types';
 
+// Tab navigator that knows the screen names from the param list
 const Tab = createBottomTabNavigator<TabParamList>();
 
 const TabNavigator = () => {
@@ -20,10 +21,14 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        // Screens draw their own header
         headerShown: false,
+        // Same background as the app so no white flash shows between screens
         sceneStyle: { backgroundColor: COLORS.background },
+        // Gold for the open tab and muted for the others
         tabBarActiveTintColor: COLORS.gold,
         tabBarInactiveTintColor: COLORS.textMuted,
+        // Bar colors side spacing and rounded top corners
         tabBarStyle: {
           backgroundColor: COLORS.tabBarBackground,
           borderTopColor: COLORS.translucentBorder,
@@ -31,7 +36,9 @@ const TabNavigator = () => {
           borderTopLeftRadius: SIZES.radius.large,
           borderTopRightRadius: SIZES.radius.large,
         },
+        // Text style of the tab names
         tabBarLabelStyle: TYPOGRAPHY.label,
+        // Plain Pressable removes the Android ripple effect of the default tab button
         tabBarButton: (props) => (
           <Pressable onPress={props.onPress} style={props.style}>
             {props.children}
@@ -39,6 +46,7 @@ const TabNavigator = () => {
         ),
       }}
     >
+      {/* Home tab with the house icon */}
       <Tab.Screen
         name={SCREENS.HOME}
         component={Home}
@@ -49,6 +57,7 @@ const TabNavigator = () => {
           ),
         }}
       />
+      {/* Prayer tab with the praying person icon */}
       <Tab.Screen
         name={SCREENS.PRAYER}
         component={Prayer}
@@ -63,6 +72,7 @@ const TabNavigator = () => {
           ),
         }}
       />
+      {/* Quran tab with the open book icon */}
       <Tab.Screen
         name={SCREENS.QURAN}
         component={Quran}
@@ -77,6 +87,7 @@ const TabNavigator = () => {
           ),
         }}
       />
+      {/* Discover tab with the compass icon */}
       <Tab.Screen
         name={SCREENS.DISCOVER}
         component={Discover}
@@ -91,6 +102,7 @@ const TabNavigator = () => {
           ),
         }}
       />
+      {/* Profile tab with the user icon */}
       <Tab.Screen
         name={SCREENS.PROFILE}
         component={Profile}
