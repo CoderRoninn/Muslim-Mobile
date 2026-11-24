@@ -25,7 +25,8 @@ const Home = () => {
         styles.content,
         {
           paddingTop: insets.top + SPACING.large,
-          paddingBottom: insets.bottom + SPACING.large,
+          // The tab bar already handles the bottom safe area
+          paddingBottom: SPACING.large,
         },
       ]}
       showsVerticalScrollIndicator={false}
