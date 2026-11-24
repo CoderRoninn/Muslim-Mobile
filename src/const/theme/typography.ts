@@ -1,5 +1,6 @@
 import { moderateScale } from '../../utils/responsive';
 
+// Text styles scaled to the screen size
 export const TYPOGRAPHY = {
   title: {
     fontSize: moderateScale(16),

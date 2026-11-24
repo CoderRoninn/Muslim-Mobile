@@ -1,5 +1,6 @@
 import { scale } from '../../utils/responsive';
 
+// Spacing values scaled to the screen width
 export const SPACING = {
   extraSmall: scale(4),
   small: scale(8),

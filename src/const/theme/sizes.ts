@@ -1,5 +1,6 @@
 import { scale } from '../../utils/responsive';
 
+// Component sizes scaled to the screen width
 export const SIZES = {
   icon: {
     extraSmall: scale(16),
