@@ -48,7 +48,6 @@ const TabNavigator = () => {
         tabBarIconStyle: { marginBottom: SPACING.extraSmall },
         // Plain Pressable removes the Android ripple effect of the default tab button
         tabBarButton: (props) => (
-          // Small top padding so the content starts a little lower than the bar edge
           <Pressable
             onPress={props.onPress}
             style={[props.style, { paddingTop: SPACING.extraSmall }]}
