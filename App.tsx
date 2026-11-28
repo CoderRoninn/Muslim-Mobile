@@ -5,7 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { COLORS } from './src/const/theme';
 // Runs the language setup when the app starts
 import './src/localization';
-import TabNavigator from './src/navigation/TabNavigator';
+import Login from './src/screens/Login';
 
 const App = () => {
   return (
@@ -17,8 +17,8 @@ const App = () => {
       <View style={{ flex: 1, backgroundColor: COLORS.background }}>
         {/* Holds the navigation state of the whole app */}
         <NavigationContainer>
-          {/* Bottom tab bar with all main screens */}
-          <TabNavigator />
+          {/* Login screen is the first screen while we test Google login */}
+          <Login />
         </NavigationContainer>
       </View>
     </SafeAreaProvider>
