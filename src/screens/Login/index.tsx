@@ -1,5 +1,6 @@
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { Image as ExpoImage } from 'expo-image';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -28,6 +29,82 @@ const formatPhone = (value: string): string => {
   ]
     .filter(Boolean)
     .join(' ');
+};
+
+// Sends the Google token to our backend and gets our own token back
+const loginWithGoogle = async (idToken: string) => {
+  // 10.0.2.2 is the computer localhost when seen from the android emulator
+  const response = await fetch('http://10.0.2.2:3000/auth/google', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ idToken }),
+  });
+
+  // The backend said no so we stop here
+  if (!response.ok) {
+    throw new Error(`Login failed with status ${response.status}`);
+  }
+
+  // The backend answer has our token and the user info
+  return response.json();
+};
+
+// Starts the Google login and prints every step
+const handleGoogleLogin = async () => {
+  console.log('Step 0 button pressed');
+
+  try {
+    // Shows if the client id was read from the env file without printing it
+    const webClientId = process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID;
+    console.log('Step 1 web client id exists', Boolean(webClientId));
+
+    // Tells Google which app is asking
+    GoogleSignin.configure({ webClientId });
+    console.log('Step 2 configure done');
+
+    // Checks that Google Play services is ready on the phone
+    await GoogleSignin.hasPlayServices();
+    console.log('Step 3 play services ready');
+
+    // Opens the Google account screen
+    console.log('Step 4 opening the account screen');
+    const response = await GoogleSignin.signIn();
+    console.log('Step 5 signIn finished with type', response.type);
+
+    // The user closed the account screen
+    if (response.type === 'cancelled') {
+      console.log('Step 6 user cancelled');
+      return;
+    }
+
+    // Prints what came back without printing the token itself
+    console.log('Step 6 login worked', {
+      hasIdToken: Boolean(response.data.idToken),
+      idTokenLength: response.data.idToken?.length,
+      email: response.data.user.email,
+      name: response.data.user.name,
+    });
+
+    // Without the Google token we have nothing to send to our backend
+    if (!response.data.idToken) {
+      console.log('Step 7 no idToken so nothing to send');
+      return;
+    }
+
+    // Sends the Google token to our backend
+    console.log('Step 7 sending idToken to the backend');
+    const result = await loginWithGoogle(response.data.idToken);
+
+    // Prints our answer without printing our token itself
+    console.log('Step 8 backend answered', {
+      user: result.user,
+      tokenLength: result.token?.length,
+    });
+  } catch (error) {
+    // Prints the whole error so we can see the code and the message
+    console.log('Step X error', JSON.stringify(error, null, 2));
+    console.log('Step X error raw', error);
+  }
 };
 
 const Login = () => {
@@ -109,7 +186,7 @@ const Login = () => {
       {/* Social login buttons for Google Apple and Facebook */}
       <View style={styles.socialRow}>
         {/* Google logo from the svg file */}
-        <Pressable style={styles.socialButton}>
+        <Pressable style={styles.socialButton} onPress={handleGoogleLogin}>
           <ExpoImage
             source={require('../../../assets/icons/googleIcon.svg')}
             style={styles.socialIcon}
